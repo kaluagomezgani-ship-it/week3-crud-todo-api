@@ -41,7 +41,7 @@ app.delete('/todos/:id', (req, res) => {
   res.status(204).send(); // Silent success
 });
 
-// GET /todos/active – BONUS: filter !completed (must be before /:id)
+// GET /todos/active 
 app.get('/todos/active', (req, res) => {
   const active = todos.filter((t) => !t.completed);
   res.json(active);
