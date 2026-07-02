@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 app.use(express.json()); // Parse JSON bodies
@@ -64,5 +65,5 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Server error!' });
 });
 
-const PORT = 3002;
-app.listen(PORT, () => console.log(`Server on port ${PORT}`));
+const port = process.env.PORT
+app.listen(port, () => console.log(`Server running`));
